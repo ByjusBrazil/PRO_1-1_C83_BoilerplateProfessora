@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Text, View, Image, StyleSheet, SafeAreaView, Platform, StatusBar, Image, Dimensions } from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, Platform, StatusBar, Image } from "react-native";
 
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
+import { RFValue } from "react-native-responsive-fontsize";
 
 let customFonts = {
 	"Bubblegum-Sans": require("../assets/fonts/BubblegumSans-Regular.ttf")
@@ -27,8 +28,9 @@ export default class CreateStory extends Component {
 
 	render() {
 		if (!this.state.fontsLoaded) {
-			return <AppLoading />
-		} else {
+			return <AppLoading />;
+		} else  {
+			return (
 			<View style={styles.container}>
 				<SafeAreaView style={styles.droidSafeArea} />
 				<View style={styles.appTitle}>
@@ -43,6 +45,7 @@ export default class CreateStory extends Component {
 					</View>
 				</View>
 			</View>
+			);
 		}
 	}
 }
